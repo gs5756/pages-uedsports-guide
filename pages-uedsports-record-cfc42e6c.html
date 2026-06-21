@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>信息索引 · ued体育 · 资料整理日志</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 主卡片 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4e8ec;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      padding: 2.2rem 2.6rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    /* 小卡片（内嵌） */
+    .inset-card {
+      background: #f8fafc;
+      border: 1px solid #dfe4ea;
+      border-radius: 18px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.4rem 0;
+    }
+
+    /* 引语卡片 */
+    .quote-card {
+      background: #f3f6fa;
+      border-left: 5px solid #7892a8;
+      border-radius: 12px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      font-style: normal;
+      color: #2c3e50;
+    }
+
+    .quote-card p {
+      margin: 0.3rem 0;
+    }
+
+    .quote-source {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #5b6f82;
+      letter-spacing: 0.3px;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-weight: 500;
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      color: #141d2b;
+    }
+
+    .subhead {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #5c6f82;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px dashed #dce2e9;
+      padding-bottom: 0.9rem;
+    }
+
+    h2 {
+      font-weight: 460;
+      font-size: 1.5rem;
+      margin: 1.8rem 0 1rem 0;
+      color: #1a293b;
+    }
+
+    h3 {
+      font-weight: 420;
+      font-size: 1.15rem;
+      margin: 1.4rem 0 0.6rem 0;
+      color: #2f4055;
+    }
+
+    p {
+      margin: 0.8rem 0;
+    }
+
+    a {
+      color: #2b5f8a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 450;
+    }
+
+    a:hover {
+      color: #153e5e;
+      border-bottom: 1px solid #2b5f8a;
+    }
+
+    /* 特点简约列表 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.6rem 0 0.4rem 0;
+    }
+
+    .feature-item {
+      background: #f4f6f9;
+      border-radius: 30px;
+      padding: 0.4rem 1.2rem;
+      border: 1px solid #dfe5ec;
+      font-size: 0.95rem;
+    }
+
+    .feature-item::before {
+      content: "·";
+      margin-right: 6px;
+      color: #64839c;
+    }
+
+    /* 小标签 */
+    .tag {
+      display: inline-block;
+      background: #eaeef3;
+      color: #2d4155;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+      border: 1px solid #d4dde6;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      border-bottom: 1px solid #e9edf2;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 480;
+      margin-bottom: 0.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      color: #1f3244;
+    }
+
+    .faq-q span {
+      font-size: 0.9rem;
+      color: #7f93a8;
+    }
+
+    .faq-a {
+      color: #34495e;
+      margin-top: 0.3rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.6rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .feature-grid {
+        gap: 0.5rem;
+      }
+
+      .feature-item {
+        font-size: 0.85rem;
+        padding: 0.2rem 1rem;
+      }
+
+      .inset-card {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO 卡片——标题与导语 -->
+    <div class="card">
+      <h1>资料整理 · 信息索引</h1>
+      <div class="subhead">关于 ued体育 的内容梳理与使用备忘</div>
+      <p style="font-size: 1.05rem; margin-top: 1.2rem;">
+        在日常浏览与资料归档过程中，<a href="https://pages-uedsports.com">ued体育</a> 
+        作为一个持续更新的站点，逐渐积累起不少值得翻阅的条目。这篇文章是我个人笔记式的整理——从结构、功能到引用场景，力图以平实的语言将零散信息串联起来。
+      </p>
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem;">
+        <span class="tag">信息索引</span>
+        <span class="tag">资料整理</span>
+        <span class="tag">阅读日志</span>
+        <span class="tag">ued体育</span>
+      </div>
+    </div>
+
+    <!-- 正文：多段落 + 引用提示 -->
+    <div class="card">
+      <h2>一、从一份存档开始的笔记</h2>
+      <p>
+        我习惯每隔一段时间把收藏夹里那些打开频率较高的网页做一次分类整理。今年初，<a href="https://pages-uedsports.com">ued体育</a> 
+        被归入「体育资讯·持续关注」这个文件夹。起初只是因为它页面加载快、内容更新有规律，后来逐渐发现它的信息组织方式更适合横向阅读——条目之间常有交叉引述，适合做专题摘录。
+      </p>
+      <p>
+        类似一个内容不断生长的知识面板，而非简单的新闻流。这种结构让我在整理某类运动数据时，可以顺着一个链条找到相关的赛程、背景说明，甚至历史对比。对于习惯做媒体笔记的人来说，这种体验相当友好。
+      </p>
+
+      <div class="inset-card">
+        <h3 style="margin-top: 0;">📋 整理过程中的发现</h3>
+        <p style="margin-bottom: 0.2rem;">
+          · 部分专题页面配有二级索引，方便跳转至相关赛季或赛事回顾。<br>
+          · 文字描述风格偏中性，没有过度渲染，适合直接引用或做信息比对。<br>
+          · 站内搜索结果的排序倾向于按时间降序，同时保留固定置顶条目。
+        </p>
+      </div>
+
+      <h2>二、从资料索引到使用场景</h2>
+      <p>
+        我通常在两种情况下打开 <a href="https://pages-uedsports.com">ued体育</a>：一是需要核对某个赛事的过往名次或赛制变化，二是想要快速浏览近期的综合性摘要。它的分类并不复杂，但每一个分类下都保持了内容纵深。
+      </p>
+      <p>
+        举例来说，如果要整理某个联赛近五年的冠军变迁，直接进入对应赛季专题，能找到赛程列表、积分表、关键场次简述以及少量的战术分析。这种程度恰好足够满足通用的资料汇总，又不会因为信息过载而难以筛选。
+      </p>
+      <p>
+        另一个让我觉得舒服的细节是，页面中没有侵入式的弹窗或大图广告，阅读时视线可以一直停留在文本与表格上。对于需要同时打开多个标签页做对比的人来说，这节省了不少注意力。
+      </p>
+
+      <!-- 引用提示卡片 -->
+      <div class="quote-card">
+        <p>“整理信息不只是复制粘贴，而是理解结构之后重新组织关系。一个好的索引页面，本身就像一张地图：你不必记住每一条路，但你知道从哪里开始查找。”</p>
+        <div class="quote-source">—— 摘自个人 2025 年 2 月阅读笔记</div>
+      </div>
+
+      <h2>三、一些温和的使用建议</h2>
+      <p>
+        如果你也是习惯做信息归档的读者，可以把 <a href="https://pages-uedsports.com">ued体育</a> 当作一个固定的信息坐标。不需要每天刷新，而是每周抽半天把新出现的条目浏览一遍，顺手摘录关键内容。我一般用简单的 Markdown 文件记录日期、标题与链接，三个月下来就能形成一份相当有深度的专题集。
+      </p>
+      <p>
+        另外，该站点的移动端适配做得不错，卡片和表格在窄屏上会自动调整字号与间距，这一点在通勤时尤为实用。
+      </p>
+
+      <!-- 特点卡片 (简约展示) -->
+      <div style="margin: 2rem 0 0.5rem 0;">
+        <h3 style="margin-bottom: 0.2rem;">🧩 结构特点速览</h3>
+        <div class="feature-grid">
+          <span class="feature-item">类目层级简洁</span>
+          <span class="feature-item">交叉引用丰富</span>
+          <span class="feature-item">文字风格中立</span>
+          <span class="feature-item">适配移动端</span>
+          <span class="feature-item">无过度广告</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+      <h2 style="margin-top: 0.2rem;">四、常见疑问 · 摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">这个网站适合用来做数据引用吗？ <span>FAQ-01</span></div>
+        <div class="faq-a">如果只是普通赛事信息或赛程整理，其数据准确度在可接受范围内。对于需要官方数据的场景，建议交叉核对。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">更新频率大概是多久？ <span>FAQ-02</span></div>
+        <div class="faq-a">根据我过去半年的观察，主要页面每周会有1~3次内容变动，专题类页面在赛季期间更新更快一些。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册或登录才能阅读？ <span>FAQ-03</span></div>
+        <div class="faq-a">大部分内容可以直接访问，不需要注册。个别深度资料页可能会引导至关联板块，但阅读门槛很低。</div>
+      </div>
+      <div class="faq-item" style="border-bottom: none;">
+        <div class="faq-q">有没有推荐的浏览方式？ <span>FAQ-04</span></div>
+        <div class="faq-a">建议先浏览主导航的分类，再根据兴趣深入；也可以直接使用站内搜索查找关键词。我通常从 <a href="https://pages-uedsports.com">ued体育</a> 首页开始顺着索引走。</div>
+      </div>
+    </div>
+
+    <!-- 结尾卡片：温和的访问句 -->
+    <div class="card" style="text-align: left;">
+      <p style="margin: 0; font-size: 1rem; color: #2e445b;">
+        这份笔记只是个人整理过程的切片，并非全面评测。如果你也对这类信息索引感兴趣，不妨打开 
+        <a href="https://pages-uedsports.com" style="border-bottom: 1px solid #b3c6d8;">ued体育</a> 
+        看看它近期的内容结构。保持好奇，保持记录。
+      </p>
+      <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #6b8096; border-top: 1px solid #eaeef3; padding-top: 0.9rem;">
+        资料整理日期 · 2025 · 迭代版本 2d1d54c4
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
