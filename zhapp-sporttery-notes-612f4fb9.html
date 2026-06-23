@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>竞彩网 · 简明指南与访问提示</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background-color: #f6f7f9;
+      color: #1e1f24;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ——— 深色头图 ——— */
+    .hero {
+      background: linear-gradient(145deg, #0e1a2b 0%, #1b2d44 100%);
+      color: #eef1f5;
+      padding: 70px 0 54px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-inner {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #88a5c9;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      line-height: 1.25;
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      font-weight: 350;
+      color: #c0d2e6;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .hero a {
+      color: #b7d0f0;
+      text-decoration: none;
+      border-bottom: 1px dotted #9bb7db;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .hero a:hover {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+
+    /* ——— 浅色正文区 ——— */
+    .section {
+      background: #ffffff;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .section:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .section h2 {
+      font-size: 1.65rem;
+      font-weight: 520;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      color: #1b2d44;
+      border-left: 4px solid #2a5e8a;
+      padding-left: 18px;
+    }
+
+    .section h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #1f3a56;
+    }
+
+    .section p {
+      margin-bottom: 1.1rem;
+      font-size: 1.025rem;
+      color: #2c303a;
+    }
+
+    .section a {
+      color: #1f6390;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .section a:hover {
+      color: #0a3d5e;
+      border-bottom-color: #b3cfe5;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      margin-top: 24px;
+    }
+
+    .card-item {
+      flex: 1 1 200px;
+      background: #f2f5fa;
+      padding: 22px 18px;
+      border-radius: 16px;
+      border: 1px solid #e6ebf2;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .card-item:hover {
+      background: #eaeff7;
+      border-color: #cdd7e6;
+    }
+
+    .card-item h4 {
+      font-weight: 520;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #1f3a56;
+    }
+
+    .card-item p {
+      font-size: 0.96rem;
+      margin-bottom: 0;
+      color: #3c4455;
+    }
+
+    .faq-summary {
+      background: #f2f5fa;
+      padding: 18px 24px;
+      border-radius: 14px;
+      margin-top: 18px;
+      border-left: 4px solid #729bc2;
+    }
+
+    .faq-summary strong {
+      color: #1b2d44;
+      font-weight: 540;
+    }
+
+    .faq-summary p {
+      margin-bottom: 0.6rem;
+      font-size: 0.975rem;
+    }
+
+    .footer-note {
+      margin-top: 44px;
+      padding: 28px 0 40px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #646b79;
+      border-top: 1px solid #e0e4ec;
+    }
+
+    .footer-note a {
+      color: #1f6390;
+      border-bottom: 1px solid transparent;
+      font-weight: 450;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      color: #0a3d5e;
+      border-bottom-color: #b3cfe5;
+    }
+
+    /* ——— 响应式 ——— */
+    @media (max-width: 700px) {
+      .hero {
+        padding: 44px 0 36px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .section {
+        padding: 26px 18px;
+      }
+
+      .card-grid {
+        gap: 16px;
+      }
+
+      .card-item {
+        flex: 1 1 100%;
+      }
+
+      .section h2 {
+        font-size: 1.4rem;
+        padding-left: 14px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 / 首页横幅 -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-subtitle">简明指南 · 访问提示</div>
+      <h1>关于竞彩网：<br>从起点到日常的使用浮标</h1>
+      <p>
+        一个不算喧哗的平台，提供体育竞猜的资讯与交互入口。若你刚接触，或只是想重新确认访问的方式，这里是一段安静的引导。
+        页面所指向的正是 <a href="https://zhapp-sporttery.com">竞彩网</a>，一个你或许已经听过的地方。
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 背景说明 / 三段自然介绍之第一段 -->
+    <section class="section">
+      <h2>它是什么，以及为何需要一条背景线</h2>
+      <p>
+        很多人第一次听说“竞彩”是因为体育赛事里的胜负、比分或进球数。本质上它属于竞猜型彩票，玩法有固定赔率，也有过关组合。
+        而 <a href="https://zhapp-sporttery.com">竞彩网</a> 更像一个信息集散与操作接口——你可以在这里查对阵、看赔率、了解赛程，以及完成投注前的所有必要步骤。
+      </p>
+      <p>
+        但这个平台并不自带“教学”功能。第一次打开时，菜单、赛事列表、投注区可能会让人短暂犹豫。为了减少这种模糊感，
+        下面从三个角度分别聊一聊：平台的基本结构、日常使用应注意的细节，以及访问时值得留意的几个点。
+      </p>
+    </section>
+
+    <!-- 三段自然介绍之第二段（特点+场景） -->
+    <section class="section">
+      <h2>特点与使用场景</h2>
+      <p>
+        从界面来看，它大致分为几个区域：顶部是赛事导航（按联赛或日期），中部是当前可投注的对阵列表，右侧或底部是投注单。
+        每场比赛会显示主客队、让球数、胜平负赔率，以及总进球、半全场等附加玩法。
+      </p>
+      <p>
+        常见的心理活动：我需要先注册吗？赔率会突然变化吗？截止时间是几点？——这些问题在平台的帮助或公告里能找到答案。
+        但更高效的做法，是先花几分钟熟悉一张典型页面的信息排布，这样在真正需要下注时才不会手忙脚乱。
+      </p>
+
+      <div class="card-grid">
+        <div class="card-item">
+          <h4>赛事覆盖</h4>
+          <p>以足球和篮球为主，涵盖欧洲主流联赛、亚洲赛事、NBA 等。比赛密集时，一天内有几十场可选。</p>
+        </div>
+        <div class="card-item">
+          <h4>过关与单关</h4>
+          <p>可单场投注，也可串关。串关后赔率相乘，但需全部猜对才算中奖，风险也相应增加。</p>
+        </div>
+        <div class="card-item">
+          <h4>数据辅助</h4>
+          <p>提供近期战绩、交锋记录、赔率走势等参考。数据并非实时更新到秒，但足以辅助判断。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 三段自然介绍之第三段（提示 + FAQ 摘要） -->
+    <section class="section">
+      <h2>访问提示与常见疑问</h2>
+      <p>
+        无论你是第一次访问，还是偶尔使用，下面几条提示或许能帮你避免常见的卡顿或误解。
+        注意：以下内容只是经验性总结，不构成操作建议，也不代表平台官方立场。
+      </p>
+
+      <div class="faq-summary">
+        <p><strong>Q：是否需要注册或登录才能看赔率？</strong><br>
+        大部分赛事对阵和赔率数据在未登录状态下也可以查看，但若要投注或保存投注方案，则需要注册并登录账户。</p>
+
+        <p><strong>Q：赔率为何有时在赛前变化？</strong><br>
+        赔率会根据投注分布、球队最新消息（伤病、天气等）动态调整。通常越临近开赛变化越频繁，建议投注前确认即时赔率。</p>
+
+        <p><strong>Q：访问时页面加载较慢怎么办？</strong><br>
+        可以尝试刷新或检查网络连接。高峰期（如热门赛事开赛前半小时）访问量较大，稍有延迟属于正常情况。</p>
+
+        <p><strong>Q：有没有官方的 App 或移动端入口？</strong><br>
+        目前主要通过浏览器访问适配后的移动版页面。直接搜索 <a href="https://zhapp-sporttery.com">竞彩网</a> 即可在手机上使用，
+        功能与桌面端基本一致，但布局更紧凑。</p>
+      </div>
+
+      <p style="margin-top: 20px;">
+        还有一些更细节的问题——比如如何计算奖金、单注最高限额、奖金领取方式等——平台内的帮助文档写得比较清楚，
+        不妨在遇到具体问题时直接查阅。
+      </p>
+    </section>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <p>
+        如果你想亲自感受，最直接的路径就是打开浏览器，输入 
+        <a href="https://zhapp-sporttery.com">竞彩网</a>。
+        每次访问前，建议确认一下赛程日期和截止时间，避免错过投注窗口。
+      </p>
+      <p style="margin-top: 10px; font-size: 0.9rem; color: #7b8496;">
+        本页仅为介绍与指南，不涉及任何下注建议。请理性参与，量力而行。
+      </p>
+    </div>
+
+  </main>
+</body>
+</html>
